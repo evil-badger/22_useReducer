@@ -11,20 +11,18 @@ import CheckboxMayonnaise from './Components/CheckboxMayonnaise';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  console.log(state);
   return (
     <>
       <div className="wrap">
-        <SelectTopping state={state} dispatch={dispatch} />
         <SizeSelector state={state} dispatch={dispatch} />
+        <SelectTopping state={state} dispatch={dispatch} />
         <CheckboxSeasoning state={state} dispatch={dispatch} />
         <CheckboxMayonnaise state={state} dispatch={dispatch} />
         <CalculateButton dispatch={dispatch} />
         {state.isShow && <Summary state={state} />}
       </div>
-
     </>
-
   );
 }
 

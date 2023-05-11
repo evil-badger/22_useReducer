@@ -1,15 +1,16 @@
 function reducer(state, action) {
     switch (action.type) {
         case 'SET_SIZE':
+            console.log(action.payload);
             const size = action.payload;
             const cost = size === 'small' ? 50 : 100;
             const calories = size === 'small' ? 20 : 40;
-            return { ...state, size, cost: state.cost + cost, calories: state.calories + calories };
+            return { ...state, size, costBasic: cost, caloriesBasic: calories};
         case 'SET_TOPPING':
             const topping = action.payload;
             const extraCost = topping === 'cheese' ? 10 : (topping === 'salad' ? 20 : (topping === 'potato' ? 15 : 0));
             const extraCalories = topping === 'cheese' ? 20 : (topping === 'salad' ? 5 : (topping === 'potato' ? 10 : 0));
-            return { ...state, topping, cost: state.cost + extraCost, calories: state.calories + extraCalories };
+            return { ...state, topping, costAdditional: extraCost, caloriesAdditional: extraCalories };
         case 'TOGGLE_SEASONING':
             const seasoning = !state.seasoning;
             const seasoningCost = seasoning ? 15 : -15;
@@ -21,7 +22,12 @@ function reducer(state, action) {
             const mayonnaiseCalories = mayonnaise ? 10 : -10;
             return { ...state, mayonnaise, cost: state.cost + mayonnaiseCost, calories: state.calories + mayonnaiseCalories };
         case "CALCULATE":
-            return { ...state, isShow: true };
+            const costBasic=state.costBasic;
+            const caloriesBasic=state.caloriesBasic;
+            const costAdditional=state.costAdditional;
+            const caloriesAdditional=state.caloriesAdditional;
+        
+            return { ...state, isShow: true, cost: costBasic+costAdditional, calories:caloriesBasic+caloriesAdditional};
         default:
             return state;
     }

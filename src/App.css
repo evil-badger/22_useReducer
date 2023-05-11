@@ -51,3 +51,7 @@
 select{
 margin-left: 20px;
 }
+
+button{
+  max-width: 100px;
+}
