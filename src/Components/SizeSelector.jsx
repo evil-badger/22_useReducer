@@ -14,8 +14,8 @@ function SizeSelector(props) {
         Выберите размер:
         <select value={size} onChange={handleChange}>
           <option>Выберите размер</option>
-          <option value="small">Маленький</option>
-          <option value="large">Большой</option>
+          <option value="small">Маленький (50 тугриків, 20 калорій) </option>
+          <option value="large">Большой (100 тугриків, 40 калорій)</option>
         </select>
       </label>
     </div>

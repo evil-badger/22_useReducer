@@ -10,7 +10,7 @@ function CheckboxSeasoning(props) {
   return (
     <div>
       <label>
-        Приправа (+15 рублей, +5 калорий):
+        Приправа (+15 тугриков, +0 калорий):
         <input
           type="checkbox"
           checked={seasoning}

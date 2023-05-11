@@ -10,7 +10,7 @@ function CheckboxMayonnaise(props) {
   return (
     <div>
       <label>
-        Майонез (+20 рублей, +10 калорий):
+        Майонез (+20 тугриков, +5 калорий):
         <input
           type="checkbox"
           checked={mayonnaise}

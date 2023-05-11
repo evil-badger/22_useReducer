@@ -14,9 +14,9 @@ function SelectTopping(props) {
         Выберите начинку:
         <select value={state.topping} onChange={handleChange}>
           <option>Выберите размер</option>
-          <option value="cheese">Сыр</option>
-          <option value="salad">Салат</option>
-          <option value="potato">Картошка</option>
+          <option value="cheese">Сыр(+ 10 тугриків, + 20 калорій)</option>
+          <option value="salad">Салат(+ 20 тугриків, + 5 калорій)</option>
+          <option value="potato">Картошка(+ 15 тугриків, + 10 калорій)</option>
         </select>
       </label>
     </div>

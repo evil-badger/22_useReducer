@@ -14,12 +14,12 @@ function reducer(state, action) {
         case 'TOGGLE_SEASONING':
             const seasoning = !state.seasoning;
             const seasoningCost = seasoning ? 15 : -15;
-            const seasoningCalories = seasoning ? 5 : -5;
+            const seasoningCalories = seasoning ? 0 : 0;
             return { ...state, seasoning, cost: state.cost + seasoningCost, calories: state.calories + seasoningCalories };
         case 'TOGGLE_MAYONNAISE':
             const mayonnaise = !state.mayonnaise;
             const mayonnaiseCost = mayonnaise ? 20 : -20;
-            const mayonnaiseCalories = mayonnaise ? 10 : -10;
+            const mayonnaiseCalories = mayonnaise ? 5 : -5;
             return { ...state, mayonnaise, cost: state.cost + mayonnaiseCost, calories: state.calories + mayonnaiseCalories };
         case "CALCULATE":
             const costBasic=state.costBasic;
