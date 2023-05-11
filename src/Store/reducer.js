@@ -20,6 +20,8 @@ function reducer(state, action) {
             const mayonnaiseCost = mayonnaise ? 20 : -20;
             const mayonnaiseCalories = mayonnaise ? 10 : -10;
             return { ...state, mayonnaise, cost: state.cost + mayonnaiseCost, calories: state.calories + mayonnaiseCalories };
+        case "CALCULATE":
+            return { ...state, isShow: true };
         default:
             return state;
     }

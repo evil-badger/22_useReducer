@@ -12,13 +12,6 @@ import CheckboxMayonnaise from './Components/CheckboxMayonnaise';
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state.isShow);
-  function handleCalculateClick() {
-    console.log("clicked");
-    state.isShow=true;
-    console.log(state.isShow);
-  }
-
   return (
     <>
       <div className="wrap">
@@ -26,8 +19,8 @@ function App() {
         <SizeSelector state={state} dispatch={dispatch} />
         <CheckboxSeasoning state={state} dispatch={dispatch} />
         <CheckboxMayonnaise state={state} dispatch={dispatch} />
-        <CalculateButton handleCalculateClick={handleCalculateClick} />
-        <Summary state={state} />
+        <CalculateButton dispatch={dispatch} />
+        {state.isShow && <Summary state={state} />}
       </div>
 
     </>
