@@ -1,7 +1,7 @@
 function reducer(state, action) {
     switch (action.type) {
         case 'SET_SIZE':
-            console.log(action.payload);
+   
             const size = action.payload;
             const cost = size === 'small' ? 50 : 100;
             const calories = size === 'small' ? 20 : 40;
